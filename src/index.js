@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css'; // ./ means, in the same directory
 
 class Square extends React.Component {
+  /* Store the current value of the square in state (by setting this.state in
+  the constructor, which should be considered private to the component),
+  and change it when the square is clicked. */
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null
+    };
+  }
+
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={() => this.setState({value: 'X'})}>
         {/* TODO */}
-        {this.props.value}
+        {this.state.value}
       </button>
     );
   }
